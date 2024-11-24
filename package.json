@@ -1,30 +1,39 @@
 {
-  "name": "fake-bank",
-  "version": "1.0.0",
-  "description": "A fake bank app for learning purposes, hosted on Vercel.",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vercel dev",
-    "build": "vercel build",
-    "start": "vercel start"
-  },
-  "dependencies": {
-    "fs": "0.0.1-security",
-    "path": "0.12.7"
-  },
-  "devDependencies": {
-    "@vercel/node": "^2.0.0"
-  },
-  "engines": {
-    "node": "16.x"
-  },
-  "keywords": [
-    "vercel",
-    "node",
-    "serverless",
-    "bank",
-    "fake"
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "register.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "dashboard.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "css/styles.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    }
   ],
-  "author": "Your Name",
-  "license": "MIT"
+  "routes": [
+    {
+      "src": "/(.*).html",
+      "dest": "/$1.html"
+    },
+    {
+      "src": "/css/(.*)",
+      "dest": "/css/$1"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ]
 }
