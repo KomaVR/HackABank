@@ -1,0 +1,30 @@
+{
+  "name": "fake-bank",
+  "version": "1.0.0",
+  "description": "A fake bank app for learning purposes, hosted on Vercel.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "start": "vercel start"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "0.12.7"
+  },
+  "devDependencies": {
+    "@vercel/node": "^2.0.0"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "keywords": [
+    "vercel",
+    "node",
+    "serverless",
+    "bank",
+    "fake"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
